@@ -10,4 +10,10 @@ public class MoodAnalyserTest {
 		assertEquals("SAD", mood.analyseMood());
 	}
 
+	@Test // TC1.2
+	public void testShouldReturnHappy() {
+		MoodAnalyser mood = new MoodAnalyser("I am in Happy Mood");
+		assertEquals("HAPPY", mood.analyseMood());
+	}
+
 }
