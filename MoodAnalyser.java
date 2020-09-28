@@ -1,4 +1,4 @@
-// Version UC2
+// Version UC3
 
 public class MoodAnalyser {
 	private String message;
@@ -10,14 +10,15 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException {
 		try {
 			if (message.contains("Sad"))
 				return "SAD";
 			else
 				return "HAPPY";
 		} catch (NullPointerException e) {
-			return "HAPPY";
+			throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MESSAGE, 
+							"Null input. Enter valid message");
 		}
 	}
 }
