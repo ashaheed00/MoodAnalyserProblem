@@ -1,4 +1,4 @@
-// Refactoring UC1
+// Version UC2
 
 public class MoodAnalyser {
 	private String message;
@@ -11,10 +11,13 @@ public class MoodAnalyser {
 	}
 
 	public String analyseMood() {
-		if (message.contains("Sad"))
-			return "SAD";
-		else
+		try {
+			if (message.contains("Sad"))
+				return "SAD";
+			else
+				return "HAPPY";
+		} catch (NullPointerException e) {
 			return "HAPPY";
+		}
 	}
-
 }
