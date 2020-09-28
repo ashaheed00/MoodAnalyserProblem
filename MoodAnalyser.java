@@ -1,15 +1,23 @@
-// Version UC1
+// Version UC2
 
 public class MoodAnalyser {
+	private String message;
 
 	public MoodAnalyser() {
 	}
 
-	public String analyseMood(String message) {
-		if (message.contains("Sad"))
-			return "SAD";
-		else
-			return "HAPPY";
+	public MoodAnalyser(String message) {
+		this.message = message;
 	}
 
+	public String analyseMood() {
+		try {
+			if (message.contains("Sad"))
+				return "SAD";
+			else
+				return "HAPPY";
+		} catch (NullPointerException e) {
+			return "HAPPY";
+		}
+	}
 }
